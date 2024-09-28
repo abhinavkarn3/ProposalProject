@@ -1,7 +1,6 @@
 package com.abhinavmicroservice.projectproposals.controller;
 
 import com.abhinavmicroservice.projectproposals.entity.Task;
-import com.abhinavmicroservice.projectproposals.exception.ResourceNotFoundException;
 import com.abhinavmicroservice.projectproposals.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
