@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProposalService {
@@ -16,8 +17,8 @@ public class ProposalService {
         return proposalRepository.findAll();
     }
 
-    public Proposal getProposalById(Long id) {
-        return proposalRepository.findById(id).orElse(null);
+    public Optional<Proposal> getProposalById(Long id) {
+        return proposalRepository.findById(id);
     }
 
     public Proposal saveProposal(Proposal proposal) {
