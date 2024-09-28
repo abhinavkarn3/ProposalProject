@@ -1,9 +1,6 @@
 package com.abhinavmicroservice.projectproposals.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,6 +19,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String email;
+    private String password;
+
     /**
      * The name of the user.
      */
@@ -36,4 +36,8 @@ public class User {
      * The skills of the user.
      */
     private String skills;
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 }

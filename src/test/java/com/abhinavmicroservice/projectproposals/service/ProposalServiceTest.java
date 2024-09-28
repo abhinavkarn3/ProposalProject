@@ -50,7 +50,7 @@ public class ProposalServiceTest {
 
         when(proposalRepository.findById(1L)).thenReturn(Optional.of(proposal));
 
-        Proposal result = proposalService.getProposalById(1L);
+        Optional<Proposal> result = proposalService.getProposalById(1L);
         assertNotNull(result);
         assertEquals("Test Proposal", result.getTitle());
     }
@@ -59,7 +59,7 @@ public class ProposalServiceTest {
     void getProposalByIdReturnsNullIfNotExists() {
         when(proposalRepository.findById(1L)).thenReturn(Optional.empty());
 
-        Proposal result = proposalService.getProposalById(1L);
+        Optional<Proposal> result = proposalService.getProposalById(1L);
         assertNull(result);
     }
 

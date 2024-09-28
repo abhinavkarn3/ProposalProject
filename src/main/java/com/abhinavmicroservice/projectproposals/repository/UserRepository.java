@@ -8,5 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Extends JpaRepository to provide CRUD operations and more.
  */
 public interface UserRepository extends JpaRepository<User, Long> {
+
+    public User findByEmail(String email);
 }
 
